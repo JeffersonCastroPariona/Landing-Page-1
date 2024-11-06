@@ -110,7 +110,7 @@ header {
     width: 100%;
     position: relative;
     background-color: #aae25c;
-    padding-top: 55px;
+    padding-top: 10px;
 }
 
 .boxHeader {
@@ -167,7 +167,7 @@ a.botonGetStarted:hover {
 }
 
 .boxHeader .imgHeader {
-    right: -19%;
+    right: -5%;
     position: relative;
 }
 
@@ -593,7 +593,7 @@ a.botonGetStarted:hover {
     }
     .boxHeader {
         flex-wrap: wrap;
-        height: 900px;
+        height: 400px;
         flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
@@ -724,28 +724,37 @@ a.botonGetStarted:hover {
         font-size: 25px;
     }
     /* ESTILOS NAVBAR */
+    .navbar {
+        display: flex;               /* Usa flexbox para la barra de navegación */
+        justify-content: center;     /* Centra el contenido horizontalmente */
+        align-items: center;         /* Alinea los elementos verticalmente */
+    }
+
     .navbar-brand {
         display: block;
     }
+
     .nav-link:hover {
         border-bottom: none;
     }
+
     .nav-item {
         text-align: center;
+        margin: 0 15px;             /* Espaciado entre los elementos del menú */
     }
     /* ESTILOS HEADER */
     .boxHeader {
-        height: 700px;
+        height: 100px;
     }
     .boxHeader .textosHeader {
-        width: 90%;
+        width: 100%;
     }
     .boxHeader h1 {
         font-size: 25px;
     }
     .boxHeader h2 {
         font-size: 20px;
-        font-weight: 300;
+        font-weight: 100;
     }
     /* ESTILOS FEATURES */
     .features {
