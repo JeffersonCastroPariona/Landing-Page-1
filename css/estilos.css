@@ -12,12 +12,12 @@ body {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
+    font-family: 'Euphemia', sans-serif;
+    font-size: 20px;
 }
 
 a {
-    text-decoration: none;
+    text-decoration:rgb(216, 95, 14);
 }
 
 a:hover {
@@ -32,7 +32,7 @@ h3 {
 }
 
 p {
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .p-10px {
@@ -52,12 +52,22 @@ p {
 }
 
 .boxLogo {
+    height: 80px;
     display: flex;
     justify-content: center;
+
 }
 
-.boxLogo h1>small {
+/*.boxLogo h1>small {
     color: #20bf6b;
+}*/
+
+.boxLogo h1 {
+    font-size: 36px; /* Incrementa el tamaño de la letra */
+    font-family: 'Playfair Display', serif; /* Ejemplo de una fuente más elegante */
+    font-weight: bold;
+    color: #20bf6b;
+
 }
 
 #subir {
@@ -106,7 +116,7 @@ p {
 /* ESTILOS HEADER */
 
 header {
-    height: 600px;
+    height: auto;
     width: 100%;
     position: relative;
     background-color: #aae25c;
@@ -124,28 +134,28 @@ header {
 }
 
 .boxHeader .textosHeader {
-    width: 42%;
+    width: 50%;
     position: relative;
-    left: 15%;
+    left: 8%;
     transform: translateY(0);
     opacity: 1;
     animation: animacion2 1s ease-out;
 }
 
 .boxHeader .textosHeader h1 {
-    font-size: 50px;
-    width: 55%;
+    font-size: 70px;
+    width: 85%;
 }
 
 .boxHeader .textosHeader p {
     width: 65%;
-    color: #535353;
-    font-size: 14px;
+    color: #756f6f;
+    font-size: 20px;
 }
 
 a.botonGetStarted {
     display: inline-block;
-    width: 135px;
+    width: 200px;
     text-align: center;
     margin-top: 20px;
     color: #fff;
@@ -179,16 +189,15 @@ a.botonGetStarted:hover {
 }
 
 
-.imgBody img
-{
-    width: 80%;
-    transform: translateX(0);
-    opacity: 1;
-    animation: animacion3 0.7s ease-out;
-    left: 30px;
-    position: relative;
-    
-    
+.imgBody img {
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    width: 450px; /* Tamaño de la imagen circular */
+    height: 450px;
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    margin-right: 45px; /* Centra la imagen horizontalmente */
+    display: block; /* Permite centrar en contenedores */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+
 }
 
 @keyframes animacion4 {
@@ -334,7 +343,7 @@ a.botonGetStarted:hover {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: auto;
+    height: 800px;
     color: #518f2d;
     overflow: hidden;
     background-color: #aae25c
@@ -348,7 +357,7 @@ a.botonGetStarted:hover {
 }
 
 .callToActions {
-    padding: 80px 0;
+    padding: 30px 0;
     display: flex;
     justify-content: center; /* Centra los elementos horizontalmente */
     align-items: center;
@@ -368,26 +377,48 @@ a.botonGetStarted:hover {
     max-width: 400px; /* Tamaño máximo de la imagen */
     vertical-align: top;
 }
-
+/*
 .contenido {
     width: 50%; /* Ajuste para el contenido */
     padding-left: 20px;
-    padding-top: 10%;
+    /*padding-top: 0%;*/
+}
+*/
+.contenido h3 {
+    font-size: 36px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #2a5d23;
+    text-align: center;
+    position: relative;
 }
 
-.contenido h3 {
-    font-size: 30px;
-    text-align: center; /* Centra el título */
-    margin-bottom: 20px;
+.contenido h3::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #20bf6b;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+.contenido {
+    background-color: rgba(223, 224, 147, 0.877); /* Light background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgb(79, 158, 5); /* Soft shadow */
 }
 
 .contenido p {
-    margin-bottom: 40px;
-    color: #584646;
-    width: 80%;
+    font-size: 18px;
+    color: #4a4a4a;
+    line-height: 1.6;
 }
 
 .callToActions .contenido ul li {
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     list-style: none;
     margin-bottom: 12px;
     color: #584646;
@@ -400,7 +431,7 @@ a.botonGetStarted:hover {
         width: 30%;
         border-radius: 3px;
         padding: 1.25rem;
-        transition: 0.4s;
+        transition: cubic-bezier(1, 0, 0, 1);
         margin-bottom: 20px;
     
 }
