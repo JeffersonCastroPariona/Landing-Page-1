@@ -96,3 +96,32 @@ function enviarMensaje() {
     alert('Mensaje enviado con éxito!');
     document.getElementById("miForm").reset();
 }
+
+// Selecciona los elementos que quieres animar
+const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+
+// Función para detectar si un elemento está visible en la pantalla
+const isElementInViewport = (element) => {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top <= window.innerHeight && rect.bottom >= 0
+    );
+};
+
+// Añade o elimina la clase 'visible' según la posición del elemento
+const handleScroll = () => {
+    elementsToAnimate.forEach((element) => {
+        if (isElementInViewport(element)) {
+            element.classList.add('visible'); // Añade la clase cuando está visible
+        } else {
+            element.classList.remove('visible'); // Elimina la clase cuando no está visible
+        }
+    });
+};
+
+// Escucha el evento 'scroll' para activar la animación
+window.addEventListener('scroll', handleScroll);
+
+// Llama a la función una vez al cargar la página
+handleScroll();
+

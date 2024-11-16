@@ -187,17 +187,18 @@ a.botonGetStarted:hover {
     opacity: 1;
     animation: animacion1 1s ease-out;
 }
-
+.imgBody {
+    flex: 1; /* Imagen ocupa un espacio proporcional */
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+}
 
 .imgBody img {
     border-radius: 50%; /* Hace que la imagen sea circular */
-    width: 450px; /* Tamaño de la imagen circular */
-    height: 450px;
-    object-fit: cover; /* Asegura que la imagen no se deforme */
-    margin-right: 45px; /* Centra la imagen horizontalmente */
-    display: block; /* Permite centrar en contenedores */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-
+    width: 300px; /* Tamaño de la imagen */
+    height: 300px;
+    object-fit: cover; /* Evita que la imagen se deforme */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra */
 }
 
 @keyframes animacion4 {
@@ -232,8 +233,10 @@ a.botonGetStarted:hover {
 }
 
 .navbar-brand {
-    display: none;
+    position: absolute; /* Mantén el logo separado del menú */
+    left: 10px; /* Asegura que esté alineado a la izquierda */
 }
+
 
 .navbar-brand small {
     color: #20bf6b;
@@ -339,15 +342,17 @@ a.botonGetStarted:hover {
 
 .boxCallToActions {
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 800px;
-    color: #518f2d;
-    overflow: hidden;
-    background-color: #aae25c
-    
+    display: flex; /* Activa Flexbox */
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    min-height: 100vh; /* Altura completa de la pantalla */
+    padding: 20px;
+    background-color: #aae25c; /* Fondo verde */
+    overflow: hidden; /* Evita que elementos se salgan */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
+        
 
     /*padding-top: 0px;
     background-color: #aae25c;
@@ -357,13 +362,15 @@ a.botonGetStarted:hover {
 }
 
 .callToActions {
-    padding: 30px 0;
-    display: flex;
-    justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: center;
-    width: 90%;
-    margin: auto;
-    gap: 20px; /* Espacio entre imagen y contenido */
+    display: flex; /* Activa Flexbox */
+    flex-direction: row; /* Coloca la imagen y el contenido en fila */
+    align-items: flex-start; /* Alinea al inicio verticalmente */
+    justify-content: space-between; /* Añade espacio entre columnas */
+    gap: 50px; /* Espaciado entre imagen y contenido */
+    width: 100%; /* Ocupa todo el ancho */
+    max-width: 1200px; /* Limita el ancho máximo */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 20px; /* Espaciado interno */
 }
 
 .imgCallToActions {
@@ -377,43 +384,53 @@ a.botonGetStarted:hover {
     max-width: 400px; /* Tamaño máximo de la imagen */
     vertical-align: top;
 }
-/*
+
 .contenido {
-    width: 50%; /* Ajuste para el contenido */
-    padding-left: 20px;
-    /*padding-top: 0%;*/
+    flex: 2; /* El contenido ocupa más espacio que la imagen */
+    display: flex;
+    flex-direction: column;
+    max-width: 600px; /* Limita el ancho del contenido */
+    padding: 20px;
+    background-color: rgba(223, 224, 147, 0.9); /* Fondo claro */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(79, 158, 5, 0.5); /* Sombra suave */
+    text-align: justify; /* Alinea el texto a la izquierda */
 }
-*/
+
 .contenido h3 {
-    font-size: 36px;
+    font-size: 28px;
     font-family: 'Playfair Display', serif;
-    font-weight: 700;
+    font-weight: bold;
     color: #2a5d23;
-    text-align: center;
-    position: relative;
+    margin-bottom: 15px;
 }
 
 .contenido h3::after {
     content: "";
     display: block;
-    width: 50px;
+    width: 100px;
     height: 3px;
     background-color: #20bf6b;
-    margin: 10px auto;
+    margin: auto;
     border-radius: 5px;
-}
-.contenido {
-    background-color: rgba(223, 224, 147, 0.877); /* Light background */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgb(79, 158, 5); /* Soft shadow */
 }
 
 .contenido p {
-    font-size: 18px;
+    font-size: 16px;
     color: #4a4a4a;
     line-height: 1.6;
 }
+
+.contenido ul {
+    padding-left: 10px; /* Desplaza el contenido de la lista */
+    margin-top: 10px;
+}
+
+.contenido ul li {
+    margin-bottom: 10px;
+    color: #2a5d23;
+}
+
 
 .callToActions .contenido ul li {
     padding-left: 20px;
@@ -422,27 +439,53 @@ a.botonGetStarted:hover {
     list-style: none;
     margin-bottom: 12px;
     color: #584646;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .boxCardCallToActions {
-    
-        background: #ffffff;
-        width: 30%;
-        border-radius: 3px;
-        padding: 1.25rem;
-        transition: cubic-bezier(1, 0, 0, 1);
-        margin-bottom: 20px;
-    
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Centra el texto */
+    width: 30%; /* Asegura que ocupe todo el ancho de la columna */
+    padding-bottom: auto;
+    margin-top: 20%;   
 }
 
 /* Animación de la tarjeta */
 .boxCardAnimated {
     transform: translateX(0);
-    animation: animacion3 0.7s ease-out;
+    animation: animacion3 0.9s ease-out;
     position: absolute;
-    opacity: 1;
+    opacity: 5;
 }
+
+@keyframes move-in {
+    0% {
+        transform: translateY(100px); /* Comienza desde abajo */
+        opacity: 0; /* Empieza invisible */
+    }
+    100% {
+        transform: translateY(0); /* Llega a su posición final */
+        opacity: 1; /* Termina visible */
+    }
+}
+
+/* Inicialmente, los elementos están ocultos y desplazados hacia abajo */
+.hidden {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.8s ease-out; /* Suaviza la transición */
+}
+
+/* Cuando el elemento es visible, aplica la animación */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: move-in 0.8s ease-out;
+}
+
 
 @keyframes animacion3 {
     0% {
@@ -461,28 +504,37 @@ a.botonGetStarted:hover {
 }
 
 .cardCallToActions .boxProfesional {
-    display: flex;
+    display: flex; /* Elementos en fila */
+    align-items: center; /* Alinea verticalmente */
+    gap: 15px; /* Espaciado entre la imagen y los datos */
 }
 
 .boxProfesional .imgProfesional {
-    margin-right: 30px;
+    flex-shrink: 0; /* Evita que la imagen se reduzca */
+    width: 50px; /* Tamaño fijo de la imagen */
+    height: 50px;
+    border-radius: 50%; /* Hace la imagen circular */
+    object-fit: cover; /* Evita deformaciones */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
 .boxProfesional .datosProfesional h5 {
-    font-size: 12px;
+    font-size: 14px; /* Tamaño del nombre */
     font-weight: bold;
+    margin: 0;
 }
 
 .boxProfesional .datosProfesional h6 {
-    font-size: 11px;
+    font-size: 12px; /* Tamaño del rol */
+    margin: 0;
+    color: #666;
 }
 
 .cardCallToActions p {
-    font-style: italic;
-    font-size: 14px;
+    font-style: italic; /* Texto en cursiva */
+    font-size: 16px; /* Ajuste del tamaño del texto */
     margin-top: 10px;
-    margin-bottom: 10px;
-    width: 100%;
+    line-height: 1.5; /* Mejora la legibilidad */
 }
 
 
@@ -657,6 +709,69 @@ a.botonGetStarted:hover {
 
 /* MEDIA QUERIES */
 
+@media (max-width: 768px) {
+    .boxCallToActions {
+        flex-direction: column; /* Cambia a diseño en columna */
+        gap: 10px; /* Reduce el espacio entre los elementos */
+    }
+
+    .imgBody img {
+        width: 200px; /* Reduce el tamaño de la imagen */
+        height: 200px;
+    }
+
+    .contenido {
+        max-width: 100%; /* Permite que el contenido ocupe todo el ancho */
+        text-align: center; /* Centra el texto */
+    }
+
+    .contenido h3 {
+        font-size: 24px; /* Reduce el tamaño del título */
+    }
+
+    .contenido p, .contenido ul li {
+        font-size: 14px; /* Reduce el tamaño del texto */
+    }
+
+    .boxCardCallToActions {
+        width: 90%; /* Reduce el ancho en pantallas medianas */
+        padding: 15px; /* Reduce el espaciado interno */
+        margin: 30px auto; /* Ajusta el margen superior e inferior */
+    }
+
+    .boxProfesional {
+        flex-direction: column; /* Cambia a disposición en columna */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .boxProfesional .imgProfesional {
+        width: 40px; /* Reduce el tamaño de la imagen */
+        height: 40px;
+        margin-bottom: 10px; /* Añade espacio debajo de la imagen */
+    }
+
+    .cardCallToActions p {
+        font-size: 14px; /* Reduce el tamaño del texto */
+    }
+}
+
+@media (max-width: 480px) {
+    .boxCardCallToActions {
+        width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+        padding: 10px; /* Reduce aún más el espaciado interno */
+    }
+
+    .boxProfesional .imgProfesional {
+        width: 35px; /* Imagen aún más pequeña */
+        height: 35px;
+    }
+
+    .cardCallToActions p {
+        font-size: 13px; /* Texto más pequeño */
+        line-height: 1.4;
+    }
+}
+
 @media screen and (max-width:800px) {
     .boxLogo {
         display: none;
@@ -799,6 +914,7 @@ a.botonGetStarted:hover {
     .boxContacto {
         height: 100%;
     }
+    
 }
 
 @media screen and (max-width:400px) {
