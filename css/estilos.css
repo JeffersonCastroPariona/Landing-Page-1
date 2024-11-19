@@ -51,11 +51,21 @@ p {
     border-bottom: 2px solid #20bf6b;
 }
 
+.logo {
+    height: 20px; /* Ajusta el tamaño de la imagen según lo necesites */
+    width: auto; /* Asegura que la imagen conserve su proporción */
+}
+
 .boxLogo {
-    height: 80px;
+    height: 30px;
     display: flex;
     justify-content: center;
 
+}
+
+.boxLogo img {  /* Si la imagen está dentro de .boxLogo */
+    width: auto; /* Ajusta el tamaño según la proporción original */
+    height: 20px; /* Cambia la altura según sea necesario */
 }
 
 /*.boxLogo h1>small {
@@ -63,7 +73,7 @@ p {
 }*/
 
 .boxLogo h1 {
-    font-size: 36px; /* Incrementa el tamaño de la letra */
+    font-size: 15px; /* Incrementa el tamaño de la letra */
     font-family: 'Playfair Display', serif; /* Ejemplo de una fuente más elegante */
     font-weight: bold;
     color: #20bf6b;
